@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" data-flavor="mocha">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tom(1)</title>
+  <meta name="description" content="Personal website of Tom Hesse" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.tomhesse.xyz" />
+  <meta property="og:title" content="tom(1)" />
+  <meta property="og:description" content="Personal website of Tom Hesse" />
+  <script>
+    (function () {
+      var f = localStorage.getItem("catppuccin-flavor");
+      if (!["latte", "frappe", "macchiato", "mocha"].includes(f)) {
+        f = window.matchMedia("(prefers-color-scheme: light)").matches ? "latte" : "mocha";
+      }
+      document.documentElement.dataset.flavor = f;
+    }());
+  </script>
+  <link rel="stylesheet" href="./css/palette.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'/>" />
+</head>
+
+<body>
+  <main class="page">
+    <header class="page-header">
+      <span class="column">tom(1)</span>
+      <span class="column center">General Commands Manual</span>
+      <span class="column right">tom(1)</span>
+    </header>
+
+    <section id="name">
+      <h2>NAME <a class="anchor" href="#name">#</a></h2>
+      <div class="body">
+        <p>tom &mdash; Tom Hesse</p>
+      </div>
+    </section>
+
+    <section id="synopsis">
+      <h2>SYNOPSIS <a class="anchor" href="#synopsis">#</a></h2>
+      <div class="body">
+        <p>
+          <span class="command">tom</span>
+          [<span class="argument">OPTION</span>]
+          [<span class="argument">FILE</span> ...]
+        </p>
+      </div>
+    </section>
+
+    <section id="description">
+      <h2>DESCRIPTION <a class="anchor" href="#description">#</a></h2>
+      <div class="body">
+        <p>
+          <span class="command">tom</span> is a wetware for Linux platforms,
+          preferably NixOS, but also works on Arch Linux, Ubuntu, Debian and
+          Gentoo. <span class="command">tom</span> works best with Neovim and
+          VS Code.
+        </p>
+      </div>
+    </section>
+
+    <section id="options">
+      <h2>OPTIONS <a class="anchor" href="#options">#</a></h2>
+      <div class="body">
+        <dl>
+          <dt>-a, --ansible</dt>
+          <dd>read and write ansible playbooks and roles</dd>
+
+          <dt>-b, --bash</dt>
+          <dd>read and write bash scripts</dd>
+
+          <dt>-C</dt>
+          <dd>read and write C code (not fully implemented)</dd>
+
+          <dt>-html/-css</dt>
+          <dd>read and write HTML/CSS with limited proficiency</dd>
+
+          <dt>-mk</dt>
+          <dd>build and configure mechanical keyboards</dd>
+
+          <dt>-n, --nixos</dt>
+          <dd>configure and maintain NixOS systems and servers</dd>
+
+          <dt>-p, --python</dt>
+          <dd>read and write Python code</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section id="environment">
+      <h2>ENVIRONMENT <a class="anchor" href="#environment">#</a></h2>
+      <div class="body">
+        <dl>
+          <dt>LANG</dt>
+          <dd>de_DE.utf-8, en_US.utf-8</dd>
+
+          <dt>PGP_KEY</dt>
+          <dd>
+            <a href="https://keys.openpgp.org/vks/v1/by-fingerprint/1663EC2E7C8C8E95BE959EB3ABF77DD0DF58CFF4"
+              target="_blank" rel="noopener noreferrer">1663EC2E7C8C8E95BE959EB3ABF77DD0DF58CFF4</a>
+          </dd>
+
+          <dt>CONTENT</dt>
+          <dd>
+            <a href="https://github.com/tomhesse" target="_blank" rel="noopener noreferrer">github</a>
+          </dd>
+        </dl>
+      </div>
+    </section>
+
+    <section id="examples">
+      <h2>EXAMPLES <a class="anchor" href="#examples">#</a></h2>
+      <div class="body">
+        <dl>
+          <dt>nix-config</dt>
+          <dd>
+            NixOS configuration using the dendritic flake pattern<br />
+            <a href="https://github.com/tomhesse/nix-config" target="_blank"
+              rel="noopener noreferrer">https://github.com/tomhesse/nix-config</a>
+          </dd>
+        </dl>
+      </div>
+    </section>
+
+    <section id="bugs">
+      <h2>BUGS <a class="anchor" href="#bugs">#</a></h2>
+      <div class="body">
+        <p>plenty</p>
+      </div>
+    </section>
+
+    <section id="authors">
+      <h2>AUTHORS <a class="anchor" href="#authors">#</a></h2>
+      <div class="body">
+        <p>tom's parents</p>
+      </div>
+    </section>
+
+    <section id="see-also">
+      <h2>SEE ALSO <a class="anchor" href="#see-also">#</a></h2>
+      <div class="body">
+        <p>
+          <a href="mailto:contact@tomhesse.xyz">email</a>(7),
+          <a href="https://www.linkedin.com/in/tom-he%C3%9Fe-5816a0255/" target="_blank"
+            rel="noopener noreferrer">linkedin</a>(7),
+          <a href="https://github.com/tomhesse" target="_blank" rel="noopener noreferrer">github</a>(7)
+        </p>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      <span class="column">Tom Hesse</span>
+      <span class="column center">November 13, 2026</span>
+      <span class="column right">tom(1)</span>
+    </footer>
+  </main>
+
+  <div class="status-bar" id="status-bar" aria-hidden="true"></div>
+  <script src="./js/man-page.js"></script>
+</body>
+
+</html>
