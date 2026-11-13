@@ -33,7 +33,7 @@ function renderStatus() {
   const percent = scrollPercent();
   const position = percent >= 100 ? "(END)" : `${percent}%`;
   statusBar.classList.remove("muted");
-  // Each page's <title> is its man page name, e.g. "tom(1)", "privacy(7)".
+  // Each page's <title> is its man page name, e.g. "tom(1)", "datenschutz(7)".
   statusBar.textContent = `Manual page ${document.title} ${position}`;
 }
 
