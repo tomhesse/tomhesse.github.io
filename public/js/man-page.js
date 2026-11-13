@@ -33,7 +33,8 @@ function renderStatus() {
   const percent = scrollPercent();
   const position = percent >= 100 ? "(END)" : `${percent}%`;
   statusBar.classList.remove("muted");
-  statusBar.textContent = `Manual page tom(1) ${position}`;
+  // Each page's <title> is its man page name, e.g. "tom(1)", "privacy(7)".
+  statusBar.textContent = `Manual page ${document.title} ${position}`;
 }
 
 function flashStatus(text) {
