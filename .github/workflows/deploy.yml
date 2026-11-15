@@ -25,7 +25,15 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
+        # Full history: the man page date comes from the last commit touching
+        # public/, and a shallow clone cannot answer that. See
+        # scripts/set-build-date.py.
         uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Set man page date
+        run: python3 scripts/set-build-date.py
 
       - name: Setup Pages
         uses: actions/configure-pages@v6

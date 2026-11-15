@@ -48,6 +48,27 @@ The generated file is committed, so `just check` works as a linter in CI. To add
 a color to the page, add its name to the `colors` list in the template's
 frontmatter and re-run `just build`.
 
+## Build date
+
+The footer carries the date the page was last revised, as a man page does. It
+comes from the last commit touching `public/`, so a README or CI tweak does not
+count as a revision and rebuilding a commit always yields the same page.
+
+```sh
+just set-date
+```
+
+Unlike `public/css/palette.css`, the result is **not committed** -- a commit
+cannot know its own date. `public/index.html` keeps a placeholder and the
+deploy workflow rewrites it in the checkout it is about to publish; see the
+`Set man page date` step in `.github/workflows/deploy.yml`.
+
+`fetch-depth: 0` is not optional. In a shallow clone the tip commit has no
+parents, so git treats it as having introduced every file and a path-limited
+log returns the tip's date rather than the real revision date -- a wrong answer
+that looks right. The script refuses to run on a shallow clone instead of
+guessing. Use `--date YYYY-MM-DD` to bypass it deliberately.
+
 ## Key bindings
 
 | Key  | Action              |
