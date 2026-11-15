@@ -1,0 +1,27 @@
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  palette:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      # Version comes from the whiskers.version field in the template.
+      - name: Setup whiskers
+        uses: catppuccin/setup-whiskers@v2
+
+      # Not catppuccin/actions' reusable whiskers-check workflow: it appends
+      # --check as the last argument, but all four flavors render into a single
+      # file, so --check needs the output path after it.
+      - name: Verify palette matches template
+        run: whiskers templates/palette.css.tera --check public/css/palette.css
